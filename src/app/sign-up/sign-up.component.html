@@ -33,13 +33,12 @@
 
     <div>
         <label for="password">Mot de passe </label>  
-        <input type="password" name="password" id="password" [(ngModel)]="user.password" #password="ngModel" required/>
+        <input type="password" name="password" id="password" [(ngModel)]="user.password" #password="ngModel" required minlength="8"/>
     </div>
 
     <div *ngIf="password.errors && (password.dirty || password.touched)">
-        <span *ngIf="password.errors?.['required']">Le nom est requis</span>
-        <span *ngIf="password.errors?.['minlength']">La longueur minimale doit être supérieure à 5</span>
-        <span *ngIf="password.errors?.['maxlength']">>La longueur maximale doit être inférieure à 15</span>
+        <span *ngIf="password.errors?.['required']">Le mot de passe est requis</span>
+        <span *ngIf="password.errors?.['minlength']">La longueur minimale doit être supérieure à 8</span>
     </div>
 
     <div>
